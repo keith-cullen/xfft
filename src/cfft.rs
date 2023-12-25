@@ -17,7 +17,7 @@ pub struct Ctx {
 }
 
 impl Ctx {
-    pub fn new(size: usize, ) -> Ctx {
+    pub fn new(size: usize) -> Ctx {
         validate_size(size);
         let mut ctx = Ctx {
             size: size,
@@ -51,10 +51,11 @@ impl Ctx {
     }
 
     fn gen_sin_tbl(&mut self) {
-        self.sin_tbl.resize(3 * (self.size >> 2), 0.0);
         let size_sin_tbl = 3 * (self.size >> 2);
+        self.sin_tbl.resize(size_sin_tbl, 0.0);
+        let w = (2.0 * PI) / self.size as f64;
         for i in 0..size_sin_tbl {
-            let x: f64 = ((2.0 * PI) / self.size as f64) * i as f64;
+            let x: f64 = w * i as f64;
             self.sin_tbl[i] = x.sin();
         }
     }

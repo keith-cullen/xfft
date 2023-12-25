@@ -70,10 +70,10 @@ fn forward_and_backward() {
         x1[2 * i] = (W * i as f64 + PHI).cos();
         x2[2 * i] = x1[2 * i];
     }
-    ctx.fwd(&mut x2[..]);
-    ctx.bwd(&mut x2[..]);
+    ctx.fwd(&mut x1[..]);
+    ctx.bwd(&mut x1[..]);
     for i in 0..SIZE*2 {
-        x2[i] /= SIZE as f64;
+        x1[i] /= SIZE as f64;
     }
     let snr = compute_snr(&x1[..], &x2[..]);
     if snr < THRESH_SNR {
