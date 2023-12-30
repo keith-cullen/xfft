@@ -1,6 +1,6 @@
 [package]
 name = "xfft"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 authors = ["Keith Cullen <12213462+keith-cullen@users.noreply.github.com>"]
 description = "A library of Fast Fourier Transforms"

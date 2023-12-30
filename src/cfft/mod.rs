@@ -147,3 +147,6 @@ fn validate_size(size: usize) {
     }
     panic!("FFT size must be an integer power of 2")
 }
+
+#[cfg(test)]
+mod tests;

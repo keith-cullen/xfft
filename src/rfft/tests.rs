@@ -5,7 +5,7 @@
 // |                          |
 // +--------------------------+
 
-use super::rfft::*;
+use super::*;
 use std::f64::consts::PI;
 
 fn compute_snr(s1: &[f64], s2: &[f64]) -> f64

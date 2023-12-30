@@ -118,3 +118,6 @@ impl Ctx {
         y[1] = x[self.size];
     }
 }
+
+#[cfg(test)]
+mod tests;
